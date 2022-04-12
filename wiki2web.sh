@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -uo pipefail
-trap cleanup SIGINT SIGTERM ERR EXIT
 
 # wiki2web
 #
@@ -20,7 +19,7 @@ usage() {
   cat <<EOF
 Usage: $(basename "${BASH_SOURCE[0]}") [-h] [-v] -o output_dir -s source_wiki
 
-Script description here.
+Exports a Vimwiki as html files.. Make sure syntax of wiki is in markdown.
 
 Available options:
 
@@ -30,11 +29,6 @@ Available options:
 -s, --source    VimWiki source folder
 EOF
   exit
-}
-
-cleanup() {
-  trap - SIGINT SIGTERM ERR EXIT
-  # script cleanup here
 }
 
 setup_colors() {
@@ -124,5 +118,5 @@ rm -r *.html
 # unpack them at their destination
 mv ~/sitehtml.tar.bz2 $out
 cd $out
-tar -xjvf sitehtml.tar.bz2 &>/dev/null
+tar -xjvf sitehtml.tar.bz2
 rm sitehtml.tar.bz2

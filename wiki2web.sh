@@ -106,7 +106,7 @@ for file in $source/*.md $source/**/*.md; do
     cat $script_dir/footer.tpl >> "$nf"
 
     perl -pi -e "s/_title_/${title}/" "$nf"
-    perl -pi -e 's/<a href="([^@]*?)"/<a href="$1\.html"/g' "$nf"
+    perl -pi -e 's/<a href="(?!http|mailto)(.*?)"/<a href="$1\.html"/g' "$nf"
   fi
 done
 

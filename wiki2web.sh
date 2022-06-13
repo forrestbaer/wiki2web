@@ -112,11 +112,12 @@ done
 
 # archive the pages
 cd $source
-find . -name "*.html" | tar -cjf ~/sitehtml.tar.bz2 -T- &>/dev/null
-rm -r *.html
+find . -name "*.html" -o -name "*.png" | tar -cjf ~/sitehtml.tar.bz2 -T- &>/dev/null
+rm -r *.html *.png
 
 # unpack them at their destination
 mv ~/sitehtml.tar.bz2 $out
+cp $script_dir/*.css $out
 cd $out
 tar -xjvf sitehtml.tar.bz2
 rm sitehtml.tar.bz2

@@ -27,12 +27,96 @@ img {
 }
 
 body { 
-  background: #CCC;
-  color: #222;
+  background: #111;
+  color: #CCC;
   font: 1.8rem 'Fira Code', Iosevka, 'Helvetica Neue', Monospaced; 
   font-weight: 300;
+  line-height: 2.5rem;
 }
 
 main {
+  max-width: 800px;
+  margin: 0 auto;
   padding: 2rem;
+}
+
+header {
+  padding-top: 3rem;
+}
+
+header menu {
+  padding: 10px;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  font-size: 2rem;
+  color: #333;
+}
+
+header h1 {
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+footer {
+  border-top: 2px solid #333;
+  font-size: 1.3rem;
+  padding: 10px;
+  margin-top: 1.8rem;
+}
+
+a {
+  color: #29cdb6;
+  border: 2px solid transparent;
+  padding: 3px 5px;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #487a76;
+}
+
+button:focus,
+a:focus {
+  color: #29cdb6;
+  border: 2px dashed #AAA;
+  border-radius: 4px;
+  outline: none;
+}
+
+button:active,
+button:hover,
+a:visited:hover,
+a:active,
+a:hover {
+  color: #29cdb6;
+  text-decoration-color: #777;
+  text-decoration: underline;
+}
+
+article {
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 2rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+article ul {
+  list-style: decimal-leading-zero;
+  list-style-position: inside;
 }
